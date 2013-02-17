@@ -1,14 +1,4 @@
 <?php
 
-$path = realpath(__DIR__ . '/src');
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+require 'vendor/autoload.php';
 
-function autoload($className) {
-	$file = 'src/' . $className . '.php';
-
-	if (file_exists($file)) {
-		require $className . '.php';
-	}
-}
-
-spl_autoload_register('autoload');
